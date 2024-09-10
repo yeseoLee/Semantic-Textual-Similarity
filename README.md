@@ -1,4 +1,4 @@
-![alt text](image.png)
+![alt text](banner.png)
 
 # Lv.1 NLP 기초 프로젝트 : 문장 간 유사도 측정(STS)
 
