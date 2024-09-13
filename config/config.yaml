@@ -1,22 +1,22 @@
 user_name: minseo # 실험자 이름
 model:
-  model_name: team-lucid/deberta-v3-base-korean # 모델명
+    model_name: team-lucid/deberta-v3-base-korean # 모델명
 patience: 5
 train:
-  batch_size: 8
-  learning_rate: 1e-5
-  max_epoch: 10
-  LossF: torch.nn.MSELoss
-  optim: torch.optim.AdamW
-  ## LossF와 optim은 torch.nn과 torch.optim을 꼭 적어야 합니다
-  shuffle: True
+    batch_size: 32
+    learning_rate: 5e-6
+    max_epoch: 10
+    LossF: torch.nn.MSELoss
+    optim: torch.optim.AdamW
+    ## LossF와 optim은 torch.nn과 torch.optim을 꼭 적어야 합니다
+    shuffle: True
 data:
-  train_path: ./data/raw/train.csv
-  dev_path: ./data/raw/dev.csv
-  test_path: ./data/raw/dev.csv
-  predict_path: ./data/raw/test.csv
-  checkpoint_path: ./checkpoint/
-  output_path: ./output/
-  submission_path: ./data/sample_submission.csv
-  val_path: ./data/dev.csv
+    train_path: ./data/raw/train.csv
+    dev_path: ./data/raw/dev.csv
+    test_path: ./data/raw/dev.csv
+    predict_path: ./data/raw/test.csv
+    checkpoint_path: ./checkpoint/
+    output_path: ./output/
+    submission_path: ./data/sample_submission.csv
+    val_path: ./data/dev.csv
 seed: 42
