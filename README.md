@@ -11,6 +11,25 @@
 
 ## **Introduction**
 
+## **데이터구조(임시)**
+
+├─.github
+├─.idea
+├─checkpoint(모델 파라미터 저장예정-현재는 아무것도 안생김)
+├─config(파라미터 입력)
+├─data
+│ └─raw(데이터 저장)
+├─experiments(모델저장)
+├─lightning_logs
+├─model
+│ └─model(transformer 라이브러리에서 모델 불러오는 부분)
+├─output
+├─tb_logs
+│ └─test1
+└─utils
+
+만약 텐서보드 키려면, 터미널에 tensorboard --logdir=tb_logs
+
 ## **Contributors**
 
 <table align='center'>
