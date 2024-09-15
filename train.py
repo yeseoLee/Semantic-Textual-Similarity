@@ -3,11 +3,13 @@ import yaml
 import os
 
 import torch
+
 # import transformers
 # import pandas as pd
 
 import pytorch_lightning as pl
 from pytorch_lightning.loggers import TensorBoardLogger
+
 # import wandb
 ##############################
 from utils import data_pipeline, utils
@@ -19,7 +21,7 @@ from model.model import Model
 if __name__ == "__main__":
 
     # baseline_config 설정 불러오기
-    with open('./config/config.yaml', encoding='utf-8') as f:
+    with open("./config/config.yaml", encoding="utf-8") as f:
         CFG = yaml.load(f, Loader=yaml.FullLoader)
 
     # experiments 폴더 내부에 실험 폴더 생성
@@ -34,7 +36,13 @@ if __name__ == "__main__":
     logger = TensorBoardLogger("tb_logs", name="test1")
 
     # trainer 인스턴스 생성
-    trainer = pl.Trainer(accelerator="gpu", devices=1, max_epochs=CFG['train']['max_epoch'], log_every_n_steps=1, logger=logger)
+    trainer = pl.Trainer(
+        accelerator="gpu",
+        devices=1,
+        max_epochs=CFG["train"]["max_epoch"],
+        log_every_n_steps=1,
+        logger=logger,
+    )
 
     # Train part
     trainer.fit(model=model, datamodule=dataloader)
@@ -48,5 +56,5 @@ if __name__ == "__main__":
     ## predict_path로 설정된 test.csv가 사용된다
 
     # 학습된 모델 저장 (experiment_folder 안에 model.pt로 저장)
-    torch.save(model, os.path.join(experiment_path, 'model.pt'))
+    torch.save(model, os.path.join(experiment_path, "model.pt"))
     print(f"모델이 저장되었습니다: {experiment_path}")
