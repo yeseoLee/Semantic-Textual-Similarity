@@ -7,7 +7,9 @@ import torch
 # import pandas as pd
 
 import pytorch_lightning as pl
+from pytorch_lightning.callbacks.early_stopping import EarlyStopping
 from pytorch_lightning.loggers import TensorBoardLogger
+
 # import wandb
 ##############################
 from utils import data_pipeline, utils
@@ -32,6 +34,16 @@ if __name__ == "__main__":
 
     # 텐서보드 테스트
     logger = TensorBoardLogger("tb_logs", name="test1")
+
+    # early_stopping 설정
+    early_stop = CFG['early_stopping']
+    early_stop_callback = EarlyStopping(
+        monitor=early_stop['monitor'],
+        min_delta=early_stop['min_delta'],
+        patience=early_stop['patience'],
+        verbose=early_stop['verbose'],
+        mode=early_stop['mode']
+        )
 
     # trainer 인스턴스 생성
     trainer = pl.Trainer(accelerator="gpu", devices=1, max_epochs=CFG['train']['max_epoch'], log_every_n_steps=1, logger=logger)
