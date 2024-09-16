@@ -23,7 +23,7 @@ if __name__ == "__main__":
         CFG = yaml.load(f, Loader=yaml.FullLoader)
 
     # 저장된 폴더 이름
-    exp_name = "0913_2020_minseo"
+    exp_name = "0915_1101_minseo"
 
     # dataloader / model 설정
     dataloader = data_pipeline.Dataloader(CFG)
