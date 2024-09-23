@@ -8,7 +8,8 @@ def get_experiment_folder_name(CFG):
 
     # CFG 값을 가져와서 폴더 이름에 추가
     user_name = CFG["user_name"]
-    model_name = CFG["model"]["model_name"]
+    # /로 인한 내부 다른 폴더 생성문제 해결
+    model_name = CFG["model"]["model_name"].replace("/", "_")
     lr = CFG["train"]["learning_rate"]
     batch_size = CFG["train"]["batch_size"]
 
