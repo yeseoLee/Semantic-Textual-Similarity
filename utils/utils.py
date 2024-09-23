@@ -8,9 +8,14 @@ def create_experiment_folder(CFG, base_path="./experiments"):
 
     # admin 값을 가져와서 폴더 이름에 추가
     user_name = CFG["user_name"]
+    model_name = CFG["model"]["model_name"]
+    lr = CFG["train"]["learning_rate"]
+    batch_size = CFG["train"]["batch_size"]
 
     # 월일_시간분_user_name 형식으로 폴더 이름 생성
-    experiment_folder_name = f"{current_time}_{user_name}"
+    experiment_folder_name = (
+        f"{current_time}_{model_name}_lr{lr}_batch{batch_size}({user_name})"
+    )
 
     # experiments 경로에 해당 폴더 생성
     experiment_path = os.path.join(base_path, experiment_folder_name)
