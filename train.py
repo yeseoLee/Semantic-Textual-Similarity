@@ -33,7 +33,9 @@ if __name__ == "__main__":
     model = Model(CFG)
 
     # 텐서보드 테스트
-    logger = TensorBoardLogger("tb_logs", name=f"{utils.get_experiment_folder_name()}")
+    logger = TensorBoardLogger(
+        "tb_logs", name=f"{utils.get_experiment_folder_name(CFG)}"
+    )
 
     # trainer 인스턴스 생성
     trainer = pl.Trainer(
