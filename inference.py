@@ -16,14 +16,33 @@ import pytorch_lightning as pl
 from utils import data_pipeline
 
 
+def get_latest_experiment_folder(base_path="./experiments"):
+    # base_path 내의 폴더 리스트 가져오기
+    experiment_folders = [
+        f for f in os.listdir(base_path) if os.path.isdir(os.path.join(base_path, f))
+    ]
+
+    # 폴더가 없을 경우 None 반환
+    if not experiment_folders:
+        return None
+
+    # 폴더 생성 시간 기준으로 정렬 (가장 최근 폴더가 마지막에 위치)
+    experiment_folders.sort(
+        key=lambda x: os.path.getmtime(os.path.join(base_path, x)), reverse=True
+    )
+
+    # 가장 최근에 생성된 폴더 반환
+    return experiment_folders[0]
+
+
 if __name__ == "__main__":
 
     # baseline_config 설정 불러오기
     with open("./config/config.yaml", encoding="utf-8") as f:
         CFG = yaml.load(f, Loader=yaml.FullLoader)
 
-    # 저장된 폴더 이름
-    exp_name = "0915_1101_minseo"
+    # 저장된 폴더 이름 가장 최근걸로 불러오기
+    exp_name = get_latest_experiment_folder()
 
     # dataloader / model 설정
     dataloader = data_pipeline.Dataloader(CFG)
