@@ -1,7 +1,12 @@
-user_name: minseo # 실험자 이름
+user_name: seongmin # 실험자 이름
 model:
-    model_name: team-lucid/deberta-v3-base-korean # 모델명
-patience: 5
+  model_name: klue/roberta-small
+early_stopping:
+  min_delta: 0.0
+  mode: max
+  monitor: val_pearson
+  patience: 5
+  verbose: False
 train:
     batch_size: 8
     learning_rate: 1e-5
