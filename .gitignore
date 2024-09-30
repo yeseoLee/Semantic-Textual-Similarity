@@ -1,0 +1,16 @@
+checkpoint/*
+!checkpoint/.gitkeep
+data/*
+!data/.gitkeep
+experiments/*
+!experiments/.gitkeep
+output/*
+!output/.gitkeep
+tb_logs/*
+!tb_logs/.gitkeep
+lightning_logs/*
+!lightning_logs/.gitkeep
+# 모든 __pycache__ 폴더 무시
+**/__pycache__/
+.idea/*
+.DS_Store
