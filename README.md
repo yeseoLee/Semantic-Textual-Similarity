@@ -52,8 +52,8 @@
       </a>    
     </td>
     <td align="center">
-      <img src="https://github.com/cukminseo.png" alt="김민서" width="100" height="100" style="border-radius: 50%;"/><br>
-      <a href="https://github.com/cukminseo">
+      <img src="https://github.com/luckyvickyricky.png" alt="김민서" width="100" height="100" style="border-radius: 50%;"/><br>
+      <a href="https://github.com/luckyvickyricky">
         <img src="https://img.shields.io/badge/%EA%B9%80%EB%AF%BC%EC%84%9C-grey?style=for-the-badge&logo=github" alt="badge 김민서"/>
       </a>
     </td>
