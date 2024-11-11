@@ -19,20 +19,21 @@
 
 ## **프로젝트 구조**
 ```
-├─.github
-├─.idea
-├─checkpoint(모델 파라미터 저장)
-├─config(파라미터 입력)
-├─data
-│ └─raw(데이터 저장)
-├─experiments(모델저장)
-├─lightning_logs
-├─model
-│ └─model(transformer 라이브러리에서 모델 불러오는 부분)
-├─output
-├─tb_logs
-│ └─test1
-└─utils
+📦project1
+ ┣ 📂config
+ ┃ ┗ 📜config.yaml
+ ┣ 📂data
+ ┣ 📂model
+ ┃ ┗ 📜model.py
+ ┣ 📂output
+ ┣ 📂tb_logs
+ ┣ 📂utils
+ ┃ ┣ 📂ensemble
+ ┃ ┣ 📂preprocess
+ ┣ 📜README.md
+ ┣ 📜inference.py
+ ┣ 📜requirements.txt
+ ┗ 📜train.py
 ```
 
 ## **Contributors**
@@ -89,6 +90,25 @@
 | 홍성민 | 모델링 및 튜닝(`kykim/KR-ELECTRA-Base`), 앙상블(`weighted voting`), 베이스라인 코드 수정과 기능 추가                                                                                                                                                           |
 | 홍성재 | 하이퍼 파라미터 튜닝(`BS`, `Epoch`, `LR`), 모델 최적화 및 앙상블(`Koelectra-base-v3-discriminator`, `roberta-small`, `bert-base-multilingual-cased` / `Soft voting`)                                                                                     |
 
+## Dependencies
+* torch==2.1.0
+* transformers==4.35.2
+* pytorch-lightning==2.1.2
+
+## Usage
+1. Setting
+```
+$ pip install -r requirements.txt
+```
+2. Training
+```angular2html
+$ python3 train.py
+```
+3. Inference
+```angular2html
+$ python3 inference.py
+```
+
 ## 프로젝트 타임라인
 
 <img width="2715" alt="Gantt chart template (Community) (3)" src="https://github.com/user-attachments/assets/3a300753-f0f4-4d86-81ea-df66ed29ad9a">
@@ -97,7 +117,6 @@
 
 <img width="3456" alt="Gantt chart template (Community) (4)" src="https://github.com/user-attachments/assets/02560fce-076e-4b82-b3a7-c35539615da1">
 
-
-
 ## 리더보드 결과
 ![image](https://github.com/user-attachments/assets/e666e639-3bfe-4bed-95b1-4fd3a93ed745)
+
