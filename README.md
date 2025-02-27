@@ -1,6 +1,4 @@
-![alt text](banner.png)
-
-# Lv.1 NLP 기초 프로젝트 : 문장 간 유사도 측정(STS)
+# NLP 프로젝트: 문장 간 유사도 측정(STS)
 
 </div>
 
@@ -14,27 +12,22 @@
 >
 > 평가 데이터의 50%는 Public 점수 계산에 활용되어 실시간 리더보드에 표기가 되고, 남은 50%는 Private 결과 계산에 활용되었습니다.
 
-부스트캠프AI Tech 7기의 Level1 과정으로 NLP 기초 대회입니다. 주제는 ‘문장 간 유사도 측정’으로, 두 문장이 얼마나 유사한지를 수치화하는 자연어처리 N21 태스크인 의미 유사도 판별(Semantic Text Similarity, 이하 STS)을 진행했습니다. 학습 데이터에 주어진 문장 두 개와 유사도 점수를 기반으로 평가 데이터의 두 문장 간의 유사도를 0과 5 사이의 값으로 예측하는 모델을 구축하였습니다.
+두 문장이 얼마나 유사한지를 수치화하는 의미 유사도 판별(Semantic Text Similarity, 이하 STS)을 진행했습니다. 학습 데이터에 주어진 문장 두 개와 유사도 점수를 기반으로 평가 데이터의 두 문장 간의 유사도를 0과 5 사이의 값으로 예측하는 모델을 구축하였습니다.
+
+## 리더보드 결과
+- **16팀 중 5위**
+
+![image](https://github.com/user-attachments/assets/e666e639-3bfe-4bed-95b1-4fd3a93ed745)
 
 
-## **프로젝트 구조**
-```
-📦project1
- ┣ 📂config
- ┃ ┗ 📜config.yaml
- ┣ 📂data
- ┣ 📂model
- ┃ ┗ 📜model.py
- ┣ 📂output
- ┣ 📂tb_logs
- ┣ 📂utils
- ┃ ┣ 📂ensemble
- ┃ ┣ 📂preprocess
- ┣ 📜README.md
- ┣ 📜inference.py
- ┣ 📜requirements.txt
- ┗ 📜train.py
-```
+## 프로젝트 타임라인
+
+<img width="2715" alt="Gantt chart template (Community) (3)" src="https://github.com/user-attachments/assets/3a300753-f0f4-4d86-81ea-df66ed29ad9a">
+
+## 프로젝트 수행결과
+
+<img width="3456" alt="Gantt chart template (Community) (4)" src="https://github.com/user-attachments/assets/02560fce-076e-4b82-b3a7-c35539615da1">
+
 
 ## **Contributors**
 
@@ -90,6 +83,25 @@
 | 홍성민 | 모델링 및 튜닝(`kykim/KR-ELECTRA-Base`), 앙상블(`weighted voting`), 베이스라인 코드 수정과 기능 추가                                                                                                                                                           |
 | 홍성재 | 하이퍼 파라미터 튜닝(`BS`, `Epoch`, `LR`), 모델 최적화 및 앙상블(`Koelectra-base-v3-discriminator`, `roberta-small`, `bert-base-multilingual-cased` / `Soft voting`)                                                                                     |
 
+## **프로젝트 구조**
+```
+📦project1
+ ┣ 📂config
+ ┃ ┗ 📜config.yaml
+ ┣ 📂data
+ ┣ 📂model
+ ┃ ┗ 📜model.py
+ ┣ 📂output
+ ┣ 📂tb_logs
+ ┣ 📂utils
+ ┃ ┣ 📂ensemble
+ ┃ ┣ 📂preprocess
+ ┣ 📜README.md
+ ┣ 📜inference.py
+ ┣ 📜requirements.txt
+ ┗ 📜train.py
+```
+
 ## Dependencies
 * torch==2.1.0
 * transformers==4.35.2
@@ -108,15 +120,3 @@ $ python3 train.py
 ```angular2html
 $ python3 inference.py
 ```
-
-## 프로젝트 타임라인
-
-<img width="2715" alt="Gantt chart template (Community) (3)" src="https://github.com/user-attachments/assets/3a300753-f0f4-4d86-81ea-df66ed29ad9a">
-
-## 프로젝트 수행결과
-
-<img width="3456" alt="Gantt chart template (Community) (4)" src="https://github.com/user-attachments/assets/02560fce-076e-4b82-b3a7-c35539615da1">
-
-## 리더보드 결과
-![image](https://github.com/user-attachments/assets/e666e639-3bfe-4bed-95b1-4fd3a93ed745)
-
